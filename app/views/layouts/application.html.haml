@@ -8,6 +8,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 %body
+.container
+  -flash.each do |name, msg|
+    = content_tag :div, msg, class: [:alert, alert_for(name)]
 %nav.navbar.navbar-default
   .navbar-container
     .navbar-header
